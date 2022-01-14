@@ -14,10 +14,11 @@ namespace Deliverable_two
             if (partySize <= 6)
             {
                 int seat = 1;
+                int numberOfWaters = 0;
+                int numberOfSpecialJuice = 0;
                 double admitOne = 9.99;
                 double water = 0.00;
                 double specialJuice = 99.99;
-                double totalDrinkCost = 0.00;
                 string drinkChoice; 
 
 
@@ -34,12 +35,14 @@ namespace Deliverable_two
                     if (drinkChoice == "water")
                     {
                         Console.WriteLine("You ordered water, that's free");
+                        numberOfWaters++;
                     }
                     else
                     {
                         if (drinkChoice == "special juice")
                         {
                             Console.WriteLine("You ordered special juice, that's 99.99");
+                            numberOfSpecialJuice++; 
                         }
                         else
                         {
@@ -47,6 +50,11 @@ namespace Deliverable_two
                         }
                     }
                 }
+                
+                double totalBill = (partySize * admitOne) + (numberOfWaters * water) + (numberOfSpecialJuice * specialJuice);
+
+                Console.WriteLine("Okay, so that's " + numberOfWaters + " waters and " + numberOfSpecialJuice + " special juices. I'll be right back. Feel free to grab your food!");
+                Console.WriteLine("Here's your bill! Total price: $" + totalBill);
             }
             else
             {
